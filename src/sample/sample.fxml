@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button layoutX="440.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeAction" text="X" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="126.0" layoutY="25.0" prefHeight="40.0" prefWidth="279.0" text="To Do Application">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <TabPane layoutX="7.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+        <tabs>
+          <Tab text="Add Task">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="51.0" layoutY="14.0" text="Title:" />
+                        <TextField fx:id="titleTextField" layoutX="137.0" layoutY="10.0" prefHeight="25.0" prefWidth="330.0" />
+                        <Label layoutX="46.0" layoutY="65.0" text="Description:" />
+                        <TextArea fx:id="descriptionTextArea" layoutX="137.0" layoutY="53.0" prefHeight="76.0" prefWidth="331.0" />
+                        <Separator layoutY="43.0" prefHeight="3.0" prefWidth="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="43.0" />
+                        <Separator layoutY="140.0" prefHeight="3.0" prefWidth="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="140.0" />
+                        <Label layoutX="50.0" layoutY="153.0" text="Date:" />
+                        <DatePicker fx:id="datePicker" layoutX="130.0" layoutY="149.0" />
+                        <Label layoutX="50.0" layoutY="188.0" text="Priority:" />
+                        <ComboBox fx:id="priorityComboBox" layoutX="130.0" layoutY="184.0" prefHeight="25.0" prefWidth="175.0" />
+                        <Label layoutX="50.0" layoutY="221.0" text="Status:" />
+                        <ComboBox fx:id="statusComboBox" layoutX="130.0" layoutY="217.0" prefHeight="25.0" prefWidth="176.0" />
+                        <Button layoutX="184.0" layoutY="258.0" mnemonicParsing="false" onAction="#resetButton" text="Reset" />
+                        <Button layoutX="257.0" layoutY="258.0" mnemonicParsing="false" onAction="#addAction" text="Add" />
+                        <Label fx:id="alertLabel" layoutX="391.0" layoutY="262.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="All Task">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="-1.0" layoutY="1.0" prefHeight="213.0" prefWidth="208.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="titleCol" prefWidth="90.0" text="Title" />
+                            <TableColumn fx:id="dateCol" prefWidth="90.0" text="Date" />
+                              <TableColumn fx:id="descriptionCol" prefWidth="140.0" text="Description" />
+                              <TableColumn fx:id="priorityCol" prefWidth="90.0" text="Priority" />
+                              <TableColumn fx:id="statusCol" prefWidth="90.0" text="Status" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
